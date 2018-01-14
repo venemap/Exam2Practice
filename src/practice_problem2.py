@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Peter Venema.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -31,7 +31,7 @@ import simple_testing as st
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_practice_problem2a()
-    run_test_practice_problem2b()
+    # run_test_practice_problem2b()
 
 
 # ----------------------------------------------------------------------
@@ -55,6 +55,23 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    expected = '[0, 5, 9, 14, 93, 12, 6]'
+    actual = practice_problem2a([-5, 0, 4, 9, 88, 7, 1], 5)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
+    expected = '[0, 5, 10]'
+    actual = practice_problem2a([-1, 4, 9], 1)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
+    expected = '9, 4, 6, 7, 1'
+    actual = practice_problem2a([14, 9, 11, 12, 6], -5)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
+    expected = '[-4, -8, -7, 1]'
+    actual = practice_problem2a([-4, -8, -7, 1], 0)
+    print("Expected:", expected)
+    print("Actual:  ", actual)
 
 
 def practice_problem2a(sequence, delta):
@@ -83,6 +100,9 @@ def practice_problem2a(sequence, delta):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    for k in range(len(sequence)):
+        sequence[k] = sequence[k] + delta
+    return sequence
 
 
 def run_test_practice_problem2b():
